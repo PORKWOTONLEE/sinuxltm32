@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "export PATH=$PATH:`pwd`/tools/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin && make -j16",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+		},
+		{
+			"label": "attach",
+			"type": "shell",
+			"command": "usbipd.exe detach --all && usbipd.exe list 2>/dev/null && usbipd.exe attach -b `usbipd.exe list | grep \"Shared\" | awk -F' ' '{print $1}'` --wsl 2>/dev/null",
+			"group": {
+				"kind": "build",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "burn",
+			"type": "shell",
+            "command": "openocd -f /usr/share/openocd/scripts/interface/cmsis-dap.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg -c \"program build/app.hex preverify verify reset exit 0x00000000\"",
+			"group": {
+				"kind": "build",
+			},
+			"problemMatcher": [],
+			"dependsOn":[
+				"attach",
+			]
+		},
+	]
+}

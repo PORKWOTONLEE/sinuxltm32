@@ -13,7 +13,7 @@
 ######################################
 # target
 ######################################
-TARGET = Test
+TARGET = app
 
 
 ######################################
@@ -35,45 +35,45 @@ BUILD_DIR = build
 # source
 ######################################
 C_SOURCES =  \
-STD_Libraries/Core/Src/main.c \
-STD_Libraries/Core/Src/stm32f10x_it.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/misc.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_adc.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_bkp.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_can.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_cec.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_crc.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_dac.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_dbgmcu.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_dma.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_exti.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_flash.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_fsmc.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_gpio.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_i2c.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_iwdg.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_pwr.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_rcc.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_rtc.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_sdio.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_spi.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_tim.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_usart.c \
-STD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_wwdg.c \
-STD_Libraries/Drivers/CMSIS/CM3/CoreSupport/core_cm3.c \
-STD_Libraries/Core/Src/system_stm32f10x.c \
-Userapp/Src/bsp_led.c \
-Userapp/Src/bsp_key.c \
-Userapp/Src/userapp.c \
-Userapp/Src/bsp_clkconfig.c \
-Userapp/Src/bsp_exti.c \
-Userapp/Src/bsp_uart.c \
-Userapp/Src/bsp_dma.c \
-Userapp/Src/bsp_dma_uart.c
+spl_lib/Core/Src/main.c \
+spl_lib/Core/Src/stm32f10x_it.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/misc.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_adc.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_bkp.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_can.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_cec.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_crc.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_dac.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_dbgmcu.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_dma.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_exti.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_flash.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_fsmc.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_gpio.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_i2c.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_iwdg.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_pwr.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_rcc.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_rtc.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_sdio.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_spi.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_tim.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_usart.c \
+spl_lib/Drivers/STM32F10x_StdPeriph_Driver/Src/stm32f10x_wwdg.c \
+spl_lib/Drivers/CMSIS/CM3/CoreSupport/core_cm3.c \
+spl_lib/Core/Src/system_stm32f10x.c \
+userapp/src/bsp_led.c \
+userapp/src/bsp_key.c \
+userapp/src/userapp.c \
+userapp/src/bsp_clkconfig.c \
+userapp/src/bsp_exti.c \
+userapp/src/bsp_uart.c \
+userapp/src/bsp_dma.c \
+userapp/src/bsp_dma_uart.c
 
 # ASM sources
 ASM_SOURCES =  \
-startup_stm32f103xe.s
+board/startup_stm32f103xe.s
 
 #######################################
 # binaries
@@ -121,10 +121,10 @@ C_DEFS =  \
 AS_INCLUDES = 
 # C includes
 C_INCLUDES =  \
--ISTD_Libraries/Core/Inc \
--ISTD_Libraries/Drivers/CMSIS/CM3/CoreSupport \
--ISTD_Libraries/Drivers/STM32F10x_StdPeriph_Driver/Inc \
--IUserapp/Inc
+-Ispl_lib/Core/Inc \
+-Ispl_lib/Drivers/CMSIS/CM3/CoreSupport \
+-Ispl_lib/Drivers/STM32F10x_StdPeriph_Driver/Inc \
+-Iuserapp/inc
 
 
 # compile gcc flags
@@ -145,7 +145,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = STM32F103VETx_FLASH.ld
+LDSCRIPT = board/STM32F103VETx_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
