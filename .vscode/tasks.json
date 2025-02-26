@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make -j$(nproc)",
+            "problemMatcher": []
+        },
+        {
+            "label": "attach",
+            "type": "shell",
+            "command": "usbipd.exe attach --wsl --busid `usbipd.exe list | grep 0d28:0204 | awk -F' ' '{print $1}'`",
+            "problemMatcher": []
+        },
+        {
+            "label": "burn",
+            "type": "shell",
+            "command": "openocd -f /usr/share/openocd/scripts/interface/cmsis-dap.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg -c \"init; reset halt; wait_halt; flash write_image erase build/app.bin 0x08000000; reset run; exit\"",
+            "problemMatcher": []
+        }
+    ]
+}
